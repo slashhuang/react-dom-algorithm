@@ -1,5 +1,5 @@
 # react-dom-diff-algorithm
-对react虚拟dom算法进行测试，虚拟DOM算法深度
+在react-dom-diff代码基础上增加对重新渲染机制的代码测试
 
 # react-dom-diff
 
