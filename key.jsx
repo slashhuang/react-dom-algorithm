@@ -2,12 +2,13 @@
  * Created by slashhuang on 16/1/18.
  */
 
-import  React from 'react';
+//import  React from 'react';
 var WithDefaultKeys = React.createClass({
     render: function() {
         return <div>
             {
                 this.props.collection.map(function(item, i) {
+                    console.log(item);
                     return <input
                         defaultValue={item}/>
 
@@ -39,7 +40,8 @@ var WithUniqueConstantKeys = React.createClass({
             this.props.collection.map(function (item) {
                 return<input
                     defaultValue={item}
-                    key={item}/>
+                    key={item+1}/>
+                {/**这里需要注意key必须和item强相关才是有效dom操作key,加上类似index的key和不加没有区别**/}
             })
         }</div>
     }
@@ -54,6 +56,7 @@ var Main = React.createClass({
     },
     _add: function() {
         var item = Date.now();
+        debugger;
         this.setState({
             collection: [item].concat(this.state.collection),
             lastAddedItem: item
